@@ -1,1 +1,30 @@
-spring.application.name=portfolio
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1  # Good practice: All API endpoints start with /api/v1
+
+spring:
+  application:
+    name: portfolio-backend
+  
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update # Automatically creates tables. Change to 'validate' in production.
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true # Shows pretty SQL in logs
+    show-sql: true
+
+# Monitoring Endpoints (Actuator)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
