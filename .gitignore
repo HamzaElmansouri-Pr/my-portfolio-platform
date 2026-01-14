@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Build outputs
+.next/
+dist/
+build/
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+
+# Env files
+.env
+.env.local
+
+# IDEs
+.idea/
+.vscode/
+*.iml
